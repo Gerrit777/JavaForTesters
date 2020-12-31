@@ -20,7 +20,8 @@ public class MyFirstTest {
     public void canDivideFourByTwo(){
         int answer = 4/2;
         assertEquals("4/2=2",2,answer);
-    }@Test
+    }
+    @Test
     public void canMultiplyTwoByTwo(){
         int answer = 2*2;
         assertEquals("2*2=4",4,answer);
