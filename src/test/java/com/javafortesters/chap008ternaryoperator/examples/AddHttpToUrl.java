@@ -7,7 +7,8 @@ import static org.junit.Assert.*;
 public class AddHttpToUrl {
     @Test
     public void ifAddHttp(){
-        String url = "www.seleniumsimplified.com"; if(!url.startsWith("http")){
+        String url = "www.seleniumsimplified.com";
+        if(!url.startsWith("http")){
             url = addHttp(url);
         }
         assertTrue(url.startsWith("http://"));
@@ -16,6 +17,21 @@ public class AddHttpToUrl {
 
     private String addHttp(String url) {
         return "http://"+url;
+    }
+
+    @Test
+    public void ifElseNestedAddHttp(){
+        String url = "seleniumsimplified.com";
+        if(url.startsWith("http")){
+            // do nothing the url is fine
+        }else{
+            if(!url.startsWith("www")){
+            url = "www." + url;
+        }
+            url = addHttp(url);
+        }
+        assertTrue(url.startsWith("http://"));
+        assertEquals("http://www.seleniumsimplified.com", url);
     }
 
     // Exercise page 117 (chapter 8)
@@ -44,5 +60,6 @@ public class AddHttpToUrl {
             assertFalse(truthy);
         }
     }
+
 
 
