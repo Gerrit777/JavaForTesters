@@ -59,7 +59,42 @@ public class AddHttpToUrl {
         else
             assertFalse(truthy);
         }
+        
+    // Exercise page 121 (chapter 8)
+    @Test
+    public void nestedIfElseHrorror(){
+        boolean truthy=true;
+        boolean falsy=true;
+        if (truthy)
+        {
+            if (!falsy)
+                if (falsy|truthy)
+                {
+                    assertTrue(truthy);
+                    assertFalse(falsy);
+                }
+            else
+                {
+                    assertTrue(truthy);
+                    assertTrue(falsy);
+                }
+        }
+        else{
+            if (!truthy)
+                    if (falsy)
+                    {
+                        assertTrue(falsy);
+                        assertFalse(truthy);
+                    }
+            else {
+                        assertFalse(falsy);
+                        assertFalse(truthy);
+            }
+        }
+
     }
+}
+
 
 
 
