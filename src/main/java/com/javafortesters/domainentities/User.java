@@ -9,14 +9,15 @@ public class User {
     }
 
     public User(String username, String password) {
-        this.username = "username";
-        this.password = "password";
+        this.username = username; // Zonder quotes !! Anders werkt de test canConstructWithUsernameAndPassword niet !!
+        this.password = password; // Zonder quotes !! Anders werkt de test canConstructWithUsernameAndPassword niet !!
     }
 
     public String getUsername() {
         return username;
     }
     public String getPassword(){
+
         return password;
     }
 
