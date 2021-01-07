@@ -1,7 +1,7 @@
 package com.javafortesters.chap006domainentities.examples;
 
 import com.javafortesters.domainentities.User;
-import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
