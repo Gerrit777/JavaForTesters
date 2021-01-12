@@ -109,15 +109,52 @@ public class AddHttpToUrl {
         switch(title.toLowerCase()){
             case "sir":
             likelyGender = "M";
-            break; case "mr":
-            likelyGender = "M";
-            break; case "master":
+            break;
+            case "mr":
             likelyGender = "M";
             break;
+            case "master":
+            likelyGender = "M";
+            break;
+
             default:
             likelyGender = "F";
             break; }
         return likelyGender; }
+
+
+    @Test
+    public void switchExample2(){
+        assertEquals("United Kingdom", countryIs("UK"));
+        assertEquals("United States", countryIs("US"));
+        assertEquals("United States", countryIs("USA"));
+        assertEquals("France", countryIs("FR"));
+        assertEquals("Sweden", countryIs("SE"));
+        assertEquals("Rest of the world", countryIs("NL"));
+
+    }
+    public String countryIs(String title){
+        String countryIs;
+        switch(title.toLowerCase()){
+            case "uk":
+                countryIs = "United Kingdom";
+                break;
+            case "us":
+            case "usa":
+                countryIs = "United States";
+                break;
+            case "fr":
+                countryIs = "France";
+                break;
+            case "se":
+                countryIs = "Sweden";
+                break;
+
+            default:
+                countryIs = "Rest of the world";
+                break; }
+        return countryIs; }
+
 }
 
 
