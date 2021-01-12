@@ -155,6 +155,67 @@ public class AddHttpToUrl {
                 break; }
         return countryIs; }
 
+    @Test
+    public void integerSwitch(){
+        //First method integerString(int anInt)
+        assertEquals("One", integerString(1));
+        assertEquals("Two", integerString(2));
+        assertEquals("Three", integerString(3));
+        assertEquals("Four", integerString(4));
+        assertEquals("Too big", integerString(5));
+        assertEquals("Too big", integerString(Integer.MAX_VALUE));
+        assertEquals("Too small", integerString(0));
+        assertEquals("Too small", integerString(Integer.MIN_VALUE));
+
+        //Second method integerStringUsingReturnOnly(int anInt)
+        assertEquals("One", integerStringUsingReturnOnly(1));
+        assertEquals("Two", integerStringUsingReturnOnly(2));
+        assertEquals("Three", integerStringUsingReturnOnly(3));
+        assertEquals("Four", integerStringUsingReturnOnly(4));
+        assertEquals("Too big", integerStringUsingReturnOnly(5));
+        assertEquals("Too big", integerStringUsingReturnOnly(Integer.MAX_VALUE));
+        assertEquals("Too small", integerStringUsingReturnOnly(0));
+        assertEquals("Too small", integerStringUsingReturnOnly(Integer.MIN_VALUE));
+    }
+    private String integerString(int anInt) {
+        String valReturn="";
+        switch(anInt){
+            case 1:
+            valReturn = "One";
+            break;
+            case 2:
+            valReturn = "Two";
+            break;
+            case 3:
+            valReturn = "Three";
+            break;
+            case 4:
+            valReturn = "Four";
+            break;
+            default:
+            if(anInt < 1){
+                valReturn = "Too small";
+            }
+            if(anInt > 4){
+                valReturn = "Too big";
+            }
+            break; }
+        return valReturn; }
+
+    private String integerStringUsingReturnOnly(int anInt)
+    { switch(anInt){
+        case 1: return "One";
+        case 2: return "Two";
+        case 3: return "Three";
+        case 4: return "Four";
+        default:
+            if(anInt < 1){
+                return "Too small"; }
+            if(anInt > 4){ return "Too big";
+            } }
+        return "";
+    }
+
 }
 
 
