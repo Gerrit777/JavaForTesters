@@ -59,7 +59,7 @@ public class AddHttpToUrl {
         else
             assertFalse(truthy);
         }
-        
+
     // Exercise page 121 (chapter 8)
     @Test
     public void nestedIfElseHrorror(){
@@ -93,6 +93,31 @@ public class AddHttpToUrl {
         }
 
     }
+    @Test
+    public void switchExample(){
+        assertEquals("M", likelyGenderIs("sir"));
+        assertEquals("M", likelyGenderIs("mr"));
+        assertEquals("M", likelyGenderIs("master"));
+        assertEquals("F", likelyGenderIs("miss"));
+        assertEquals("F", likelyGenderIs("mrs"));
+        assertEquals("F", likelyGenderIs("ms"));
+        assertEquals("F", likelyGenderIs("lady"));
+        assertEquals("F", likelyGenderIs("madam"));
+    }
+    public String likelyGenderIs(String title){
+        String likelyGender;
+        switch(title.toLowerCase()){
+            case "sir":
+            likelyGender = "M";
+            break; case "mr":
+            likelyGender = "M";
+            break; case "master":
+            likelyGender = "M";
+            break;
+            default:
+            likelyGender = "F";
+            break; }
+        return likelyGender; }
 }
 
 
