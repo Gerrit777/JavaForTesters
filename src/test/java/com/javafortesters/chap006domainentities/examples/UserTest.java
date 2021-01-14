@@ -61,4 +61,30 @@ public class UserTest {
         assertEquals("eris", users[1].getUsername());
         assertEquals("ken", users[2].getUsername());
     }
+
+    @Test
+    public void exerciseCreateAnArrayOf100Users(){
+        User[] users = new User[100];
+
+        for(int userIndex =0; userIndex<100; userIndex++){
+            int userId = userIndex + 1;
+            users[userIndex] = new User("user" + userId,
+                                        "password" + userId);
+        }
+        // check creation
+        for(User aUser:users){
+            System.out.println(aUser.getUsername() +
+                ", " +
+                aUser.getPassword());
+        }
+        // bonus points assert creation
+        int userId = 1;
+        for(User aUser : users){
+            assertEquals("user" + userId, aUser.getUsername());
+            assertEquals("password" + userId, aUser.getPassword());
+            userId++;
+        }
+        // check the last one output was 100, i.e. next would be 101
+        assertEquals(userId, 101);
+    }
 }
