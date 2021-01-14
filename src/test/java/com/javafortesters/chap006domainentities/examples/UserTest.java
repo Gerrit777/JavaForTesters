@@ -43,4 +43,22 @@ public class UserTest {
                 "PaZZwor6",
                 user.getPassword());
     }
+
+    @Test
+    public void createAnArrayOfUsers(){
+        User[] users = new User[3];
+
+        users[0] = new User("bob","bA55Word");
+        users[1] = new User("eris","eA55Word");
+        users[2] = new User("ken","kA55Word");
+
+        //Iterate over the array of users (chapter 9)
+        for (User aUser:users){
+            System.out.println(aUser.getUsername());
+        }
+
+        assertEquals("bob", users[0].getUsername());
+        assertEquals("eris", users[1].getUsername());
+        assertEquals("ken", users[2].getUsername());
+    }
 }
