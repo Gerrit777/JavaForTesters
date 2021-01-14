@@ -45,4 +45,20 @@ public class SortWorkingdaysArray {
             System.out.println(aworkday);
         }
     }
+
+    @Test
+    public void print2DIntArray(){
+
+        int[][] multi = new int [7][7];
+        for (int[] outer : multi){
+            if (outer==null){
+                System.out.print("null");
+            }else{
+                for(int inner : outer){
+                    System.out.print(inner + ",");
+                }
+            }
+            System.out.println("");
+        }
+    }
 }

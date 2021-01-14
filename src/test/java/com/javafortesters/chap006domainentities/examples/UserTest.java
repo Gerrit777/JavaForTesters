@@ -10,6 +10,7 @@ public class UserTest {
 
     @Test
     public void canConstructANewUser(){
+
         User user = new User();
     }
 
